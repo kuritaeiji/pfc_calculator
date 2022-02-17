@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+  db:
+    container_name: db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    ports:
+      - 3307:3306
+    volumes:
+      - mysql:/var/lib/mysql
+
+  back:
+    container_name: back
+    build: ./back
+    environment:
+      MYSQL_PASSWORD: password
+      MYSQL_USERNAME: root
+      MYSQL_HOST: db
+    ports:
+      - 3000:3000
+    volumes:
+      - ./back:/app
+      - bundle:/usr/local/bundle
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    command: /bin/bash -c "rm -f /app/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
+
+  front:
+    container_name: front
+    build: ./front
+    ports:
+      - 8080:3000
+    volumes:
+      - ./front:/app
+      - node_modules:/app/node_modules
+
+
+  solargraph:
+    container_name: solargraph
+    build: ./back
+    ports:
+      - 8091:7658
+    volumes:
+      - ./back:/app
+      - bundle:/usr/local/bundle
+    command: bundle exec solargraph socket --host=0.0.0.0 --port=7658
+
+volumes:
+  mysql:
+  bundle:
+  node_modules:

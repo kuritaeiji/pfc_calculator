@@ -1,0 +1,6 @@
+[submodule "back"]
+  path = back
+  url = https://github.com/kuritaeiji/pfc_calculator_back.git
+[submodule "front"]
+  path = front
+  url = https://github.com/kuritaeiji/pfc_calculator_front.git
