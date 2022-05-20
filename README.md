@@ -23,7 +23,9 @@
 
 ## アプリケーション内で使用しいる技術
 - フロントエンド：　Nuxt.js
+- フロントエンドテスト: Jest
 - バックエンド: Ruby on Rails
+- バックエンドテスト: Rspec
 - データベース: Mysql
 - 仮想化技術: Docker, docker-compose
 - CI/CDツール： CircleCI
