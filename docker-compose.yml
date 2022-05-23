@@ -19,7 +19,7 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_USERNAME: root
       MYSQL_HOST: db
-      FRONT_ORIGIN: localhost:8080
+      FRONT_ORIGIN: http://localhost:8080
       EDITOR: vim
     ports:
       - 3000:3000
