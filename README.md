@@ -22,13 +22,14 @@
 - カロリー・タンパク質・脂質・炭水化物の1月毎の平均値を計算し、線グラフにする機能
 
 ## アプリケーション内で使用しいる技術
-- フロントエンド：　Nuxt.js
+- フロントエンド: Nuxt.js
 - フロントエンドテスト: Jest
 - バックエンド: Ruby on Rails
 - バックエンドテスト: Rspec
 - データベース: Mysql
 - 仮想化技術: Docker, docker-compose
-- CI/CDツール： CircleCI
-- インフラ： herokuのコンテナデプロイ
-- ログイン機能： JWT
-- メール送信機能： SendGrid
+- CI/CDツール: CircleCI
+- インフラフロントエンド: AWS(Route53 + CloudFront + ACM + S3 + Terraform)
+- インフラバックエンド: herokuのコンテナデプロイ
+- ログイン機能: JWT
+- メール送信機能: SendGrid
